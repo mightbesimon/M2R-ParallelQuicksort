@@ -20,3 +20,30 @@ LIBS =
 
 clean:
 	rm -f parallelQuicksort *.o *~
+
+# ---------------------------------------------------------------------
+# Instrumented harness used for the 2026-11-05 experimental campaign.
+# Built at -O2 (REASONABLY_CAREFUL_DUDE) because measuring -O0 code
+# tells us about the compiler, not about the algorithm.  The -O0 build
+# is kept as qsort_bench_O0 so that the effect of the flag can itself
+# be measured.
+# ---------------------------------------------------------------------
+BENCH_CFLAGS = -g -Wall -Wextra -std=c99 -pthread
+
+qsort_bench: qsort_bench.c
+	$(CC) $(BENCH_CFLAGS) -O2 $< -o $@ -lpthread
+
+qsort_bench_O0: qsort_bench.c
+	$(CC) $(BENCH_CFLAGS) -O0 $< -o $@ -lpthread
+
+# Built at -O2 like qsort_bench, so that the order experiment differs
+# from the main campaign in the run order ALONE.
+qsort_order: qsort_order.c
+	$(CC) $(BENCH_CFLAGS) -O2 $< -o $@ -lpthread
+
+bench: qsort_bench qsort_bench_O0 qsort_order
+
+clean-bench:
+	rm -f qsort_bench qsort_bench_O0 qsort_order
+
+.PHONY: bench clean-bench
