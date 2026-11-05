@@ -1,0 +1,66 @@
+Headline numbers
+================
+
+-- replication_near_1M --
+     size speedup     lo     hi         p        verdict
+1 1063659   0.712 0.6815 0.7453 6.104e-05 parallel loses
+
+-- replication_all --
+      size speedup    lo    hi        verdict
+1      100   0.000 0.000 0.000 parallel loses
+2      194   0.001 0.000 0.001 parallel loses
+3      376   0.001 0.001 0.001 parallel loses
+4      729   0.001 0.001 0.001 parallel loses
+5     1414   0.002 0.002 0.002 parallel loses
+6     2742   0.004 0.003 0.004 parallel loses
+7     5318   0.007 0.006 0.008 parallel loses
+8    10313   0.015 0.009 0.025 parallel loses
+9    20000   0.019 0.016 0.024 parallel loses
+10   38785   0.033 0.030 0.035 parallel loses
+11   75212   0.063 0.058 0.068 parallel loses
+12  145853   0.120 0.111 0.130 parallel loses
+13  282843   0.225 0.207 0.246 parallel loses
+14  548496   0.410 0.392 0.430 parallel loses
+15 1063659   0.712 0.682 0.745 parallel loses
+16 2062677   1.210 1.162 1.260  parallel wins
+17 4000000   1.615 1.514 1.711  parallel wins
+
+-- order_effect --
+     size     F     p                          conclusion
+1  100000 0.062 0.940 no detectable position effect (<2%)
+2 1000000 0.363 0.696 no detectable position effect (<2%)
+
+-- best_tlevel --
+     size best_tlevel     time speedup_vs_seq
+1   10000           1 0.001226         0.7141
+2  100000           3 0.006963         1.4131
+3 1000000           5 0.051050         2.1764
+4 4000000           6 0.196585         2.5096
+
+-- shipped_tlevel --
+     size    time speedup_vs_seq
+1   10000 0.09579       0.009139
+2  100000 0.11722       0.083938
+3 1000000 0.18303       0.607011
+4 4000000 0.30431       1.621186
+
+-- breakeven --
+            regression_crossing reg_lo reg_hi first_size_with_CI_above_1
+(Intercept)               29224  22045  40214                      89443
+                                                                                                                                                       note
+(Intercept) regression crossing = where the two fitted power laws meet; the second column is the smallest measured size at which the paired 95% CI clears 1
+
+-- tuned_8M --
+     size cut_est cut_lo cut_hi par_est par_lo par_hi
+1 8000000   2.905  2.782  3.026   2.048  1.818  2.305
+
+-- relative standard deviation of wall_time per cell (E1) --
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ 0.0517  0.0975  0.1249  0.1921  0.1749  1.5077 
+
+-- models --
+    algo   a_nlogn      a_se r2_nlogn loglog_slope slope_lo slope_hi r2_loglog
+1    seq 5.546e-09 2.236e-11   0.9973       1.0613   1.0520   1.0707    0.9968
+2    par 2.875e-09 4.903e-11   0.9545       0.8902   0.8674   0.9131    0.9732
+3   libc 8.740e-09 3.059e-11   0.9980       1.0786   1.0683   1.0890    0.9962
+4 parcut 1.926e-09 9.730e-12   0.9958       0.8207   0.8020   0.8394    0.9788

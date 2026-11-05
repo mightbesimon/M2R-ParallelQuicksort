@@ -35,3 +35,7 @@ journal.tex
 *.x86_64
 *.hex
 src/parallelQuicksort
+# compiled benchmark harnesses
+src/qsort_bench
+src/qsort_bench_O0
+src/qsort_order

@@ -1,0 +1,104 @@
+{
+  "campaign": "E6_headtohead",
+  "started_utc": "2026-11-05T11:39:39.536096+00:00",
+  "design_shuffle_seed": 20261105,
+  "blocks": 15,
+  "cells_per_block": 60,
+  "total_measurements": 900,
+  "spec": {
+    "blocks": 15,
+    "opt": [
+      "O2"
+    ],
+    "factors": {
+      "algo": [
+        "seq",
+        "par",
+        "libc",
+        "parcut"
+      ],
+      "size": [
+        1000,
+        1900,
+        3611,
+        6861,
+        13037,
+        24772,
+        47071,
+        89443,
+        169956,
+        322946,
+        613651,
+        1166040,
+        2215673,
+        4210153,
+        8000000
+      ],
+      "tlevel": [
+        10
+      ],
+      "cutoff": [
+        0
+      ],
+      "rng": [
+        "pertask"
+      ],
+      "cores": [
+        0
+      ]
+    },
+    "overrides": {
+      "par": {
+        "tlevel": [
+          3
+        ]
+      },
+      "parcut": {
+        "tlevel": [
+          16
+        ],
+        "cutoff": [
+          50000
+        ]
+      },
+      "seq": {
+        "tlevel": [
+          0
+        ]
+      }
+    }
+  },
+  "machine": {
+    "hostname": "vm",
+    "kernel": "6.18.44-fc-v236",
+    "platform": "Linux-6.18.44-fc-v236-x86_64-with-glibc2.39",
+    "cpu_model": "Intel(R) Xeon(R) Processor @ 2.10GHz",
+    "ncpu_online": 4,
+    "scaling_governor": "unavailable",
+    "virtualisation": "docker",
+    "mem_total_kb": "16472088",
+    "libc": "glibc 2.39",
+    "cc_version": "cc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "git_rev": "278f9e7ec6c037e3c61304c7c57b1283e98f44ee",
+    "git_dirty": true,
+    "taskset_available": true
+  },
+  "finished_utc": "2026-11-05T11:41:41.078226+00:00",
+  "wallclock_s": 121.5,
+  "failures": [],
+  "machine_after": {
+    "hostname": "vm",
+    "kernel": "6.18.44-fc-v236",
+    "platform": "Linux-6.18.44-fc-v236-x86_64-with-glibc2.39",
+    "cpu_model": "Intel(R) Xeon(R) Processor @ 2.10GHz",
+    "ncpu_online": 4,
+    "scaling_governor": "unavailable",
+    "virtualisation": "docker",
+    "mem_total_kb": "16472088",
+    "libc": "glibc 2.39",
+    "cc_version": "cc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "git_rev": "278f9e7ec6c037e3c61304c7c57b1283e98f44ee",
+    "git_dirty": true,
+    "taskset_available": true
+  }
+}

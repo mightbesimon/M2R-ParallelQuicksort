@@ -1,0 +1,74 @@
+{
+  "campaign": "E5_repair",
+  "started_utc": "2026-11-05T11:39:06.912735+00:00",
+  "design_shuffle_seed": 20261105,
+  "blocks": 12,
+  "cells_per_block": 18,
+  "total_measurements": 216,
+  "spec": {
+    "blocks": 12,
+    "opt": [
+      "O2"
+    ],
+    "factors": {
+      "algo": [
+        "parcut"
+      ],
+      "size": [
+        100000,
+        1000000,
+        4000000
+      ],
+      "tlevel": [
+        16
+      ],
+      "cutoff": [
+        1000,
+        5000,
+        20000,
+        50000,
+        200000,
+        1000000
+      ],
+      "rng": [
+        "pertask"
+      ],
+      "cores": [
+        0
+      ]
+    }
+  },
+  "machine": {
+    "hostname": "vm",
+    "kernel": "6.18.44-fc-v236",
+    "platform": "Linux-6.18.44-fc-v236-x86_64-with-glibc2.39",
+    "cpu_model": "Intel(R) Xeon(R) Processor @ 2.10GHz",
+    "ncpu_online": 4,
+    "scaling_governor": "unavailable",
+    "virtualisation": "docker",
+    "mem_total_kb": "16472088",
+    "libc": "glibc 2.39",
+    "cc_version": "cc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "git_rev": "278f9e7ec6c037e3c61304c7c57b1283e98f44ee",
+    "git_dirty": true,
+    "taskset_available": true
+  },
+  "finished_utc": "2026-11-05T11:39:39.468619+00:00",
+  "wallclock_s": 32.5,
+  "failures": [],
+  "machine_after": {
+    "hostname": "vm",
+    "kernel": "6.18.44-fc-v236",
+    "platform": "Linux-6.18.44-fc-v236-x86_64-with-glibc2.39",
+    "cpu_model": "Intel(R) Xeon(R) Processor @ 2.10GHz",
+    "ncpu_online": 4,
+    "scaling_governor": "unavailable",
+    "virtualisation": "docker",
+    "mem_total_kb": "16472088",
+    "libc": "glibc 2.39",
+    "cc_version": "cc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "git_rev": "278f9e7ec6c037e3c61304c7c57b1283e98f44ee",
+    "git_dirty": true,
+    "taskset_available": true
+  }
+}
