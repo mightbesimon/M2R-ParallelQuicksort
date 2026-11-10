@@ -1,7 +1,6 @@
 #!/bin/bash
 set -e
 
-# Create output folder
 OUTPUT_DIR="data"
 mkdir -p "$OUTPUT_DIR"
 
