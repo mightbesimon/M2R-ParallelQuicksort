@@ -1,0 +1,20 @@
+Teodor
+Processor Name: Dual-Core Intel Core i7
+      Processor Speed: 2,5 GHz
+      Number of Processors: 1
+      Total Number of Cores: 2
+      L2 Cache (per Core): 256 KB
+      L3 Cache: 4 MB
+      Hyper-Threading Technology: Enabled
+      Memory: 8 GB
+
+Simon 
+Chip: Apple M2
+Total number of cores: 8 (4 performance 4 efficiency)
+Memory: 24 GB
+
+Mircea
+Model name: Intel(R) Core(TM) I7-14650HX
+CPU Family: 6
+Thread(s) per core: 2
+Core(s) per socket: 16
