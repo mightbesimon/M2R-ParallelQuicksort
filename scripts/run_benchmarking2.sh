@@ -8,7 +8,6 @@ TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 HOST=$(hostname)
 CSV_FILE="$OUTPUT_DIR/results_exp2_large_${HOST}_${TIMESTAMP}.csv"
 
-# Large array sizes to test parallel speedup at scale
 SIZES=(1000000 2000000 5000000 7500000 10000000 15000000 20000000)
 REPS=30
 
