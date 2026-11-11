@@ -23,7 +23,7 @@ for s in "${SIZES[@]}"; do
 done
 
 SHUFFLED_PLAN=$(mktemp)
-shuf "$PLAN_FILE" > "$SHUFFLED_PLAN"
+sort -R "$PLAN_FILE" > "$SHUFFLED_PLAN"
 
 TOTAL_RUNS=$(wc -l < "$SHUFFLED_PLAN")
 CURRENT=0
