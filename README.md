@@ -8,4 +8,5 @@ improve their experimental methodology.
 
 - `journal.org` — the original journal
 - `journal.ipynb` — python notebook, runs the benchmarks and plots them
-- `journal2.Rmd` — R notebook source
+- **`Experiment.Rmd` — R notebook source**, runs the benchmarks and plots them
+- **`Experiment.md` — readable file of plots
