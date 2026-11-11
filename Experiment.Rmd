@@ -165,7 +165,6 @@ df_model_data <- df %>%
 ```
 
 ```{r}
-# Fit Time ~ Complexity separately for each Device and Type
 models <- df_model_data %>%
   group_by(Device, Type) %>%
   do(model = lm(Time ~ Complexity, data = .))
