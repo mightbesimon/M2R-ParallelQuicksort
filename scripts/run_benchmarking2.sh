@@ -8,7 +8,6 @@ TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 HOST=$(hostname)
 CSV_FILE="$OUTPUT_DIR/results_exp2_large_${HOST}_${TIMESTAMP}.csv"
 
-# Large array sizes to test parallel speedup at scale
 SIZES=(1000000 2000000 5000000 7500000 10000000 15000000 20000000)
 REPS=30
 
@@ -22,13 +21,11 @@ for s in "${SIZES[@]}"; do
     done
 done
 
-SHUFFLED_PLAN=$(mktemp)
-sort -R "$PLAN_FILE" > "$SHUFFLED_PLAN"
-
-TOTAL_RUNS=$(wc -l < "$SHUFFLED_PLAN")
+TOTAL_RUNS=$(wc -l < "$PLAN_FILE")
 CURRENT=0
 
-echo "Running Experiment 2: Large scale ($TOTAL_RUNS runs)..."
+echo "Running Experiment 2: Large scale ($TOTAL_RUNS runs in structured 
+order)..."
 
 while read -r size rep; do
     CURRENT=$((CURRENT + 1))
@@ -45,7 +42,7 @@ while read -r size rep; do
     if (( CURRENT % 21 == 0 || CURRENT == TOTAL_RUNS )); then
         echo "Exp 2 Progress: $CURRENT / $TOTAL_RUNS completed"
     fi
-done < "$SHUFFLED_PLAN"
+done < "$PLAN_FILE"
 
-rm -f "$PLAN_FILE" "$SHUFFLED_PLAN"
+rm -f "$PLAN_FILE"
 echo "Done! Exp 2 saved to: $CSV_FILE"
